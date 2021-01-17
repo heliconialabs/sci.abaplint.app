@@ -23,7 +23,7 @@ spec:
         {{- range .hosts }}
         - {{ . | quote }}
         {{- end }}
-      secretName: secret-abalo-tls
+      secretName: secret-sci-tls
     {{- end }}
   {{- end }}
   rules:
