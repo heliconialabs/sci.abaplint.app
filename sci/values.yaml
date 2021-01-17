@@ -1,0 +1,42 @@
+replicaCount: 1
+
+image:
+  repository: abaplint/abaplint-backend
+  pullPolicy: Always
+  tag: "latest"
+
+imagePullSecrets: []
+nameOverride: ""
+fullnameOverride: ""
+
+serviceAccount:
+  # Specifies whether a service account should be created
+  create: true
+  annotations: {}
+  name: ""
+
+podAnnotations: {}
+
+podSecurityContext: {}
+
+securityContext: {}
+
+service:
+  type: ClusterIP
+  port: 80
+
+ingress:
+  enabled: true
+  hosts:
+    - host: sci.abaplint.app
+  tls:
+    - hosts:
+      - sci.abaplint.app
+
+resources: {}
+
+nodeSelector: {}
+
+tolerations: []
+
+affinity: {}
