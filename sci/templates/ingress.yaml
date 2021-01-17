@@ -15,6 +15,7 @@ metadata:
     kubernetes.io/ingress.class: nginx
     nginx.ingress.kubernetes.io/from-to-www-redirect: "true"
     cert-manager.io/cluster-issuer: letsencrypt-prod
+    service.beta.kubernetes.io/do-loadbalancer-hostname: "sci.abaplint.app"
 spec:
   {{- if .Values.ingress.tls }}
   tls:
