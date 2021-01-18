@@ -16,6 +16,7 @@ spec:
     {{- end }}
       labels:
         {{- include "sci.selectorLabels" . | nindent 8 }}
+        date: "{{ now | unixEpoch }}"
     spec:
       {{- with .Values.imagePullSecrets }}
       imagePullSecrets:
@@ -30,6 +31,9 @@ spec:
             {{- toYaml .Values.securityContext | nindent 12 }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
+          env:
+            - name: ALB_SUPPRESS_FRONPAGE_LOG
+              value: "1"
           ports:
             - name: http
               containerPort: 3000
