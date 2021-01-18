@@ -1,5 +1,5 @@
 # sci.abaplint.app
-sci.abaplint.app Helm Chart
+https://sci.abaplint.app Helm Chart
 
 ```
 helm install -f sci/values.yaml --namespace sci --create-namespace sci sci/
