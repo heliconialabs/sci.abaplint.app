@@ -33,7 +33,13 @@ ingress:
     - hosts:
       - sci.abaplint.app
 
-resources: {}
+resources:
+  requests:
+    memory: "64Mi"
+    cpu: 0.1
+  limits:
+    memory: "2Gi"
+    cpu: 1
 
 nodeSelector: {}
 
